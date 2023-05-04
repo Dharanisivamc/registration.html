@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<htm>
+    <head>
+        <meta charset ="utf-8">
+        <title>Feedback form</title>
+        <script type="text/javascript">
+            function validate()
+            {
+                var n1= document.forms["RegForm"]["name"];
+                var n2 = document.forms["RegForm"]["email"];
+                var n3 = document.forms["RegForm"]["rating"];
+                var n4 = document.getElementsByName["howtosite"];
+
+                if(name1.value=" ")
+                {
+                    window.alert("Please enter your name.");
+                    name1.focus();
+                    return false;
+                }
+                if(n2.value=="")
+                {
+                    window.alert("Please Enter your email");
+                    n2.focus();
+                    return false;
+                }
+                if(n3.selectedindex< 1)
+                {
+                    alert("Please Rate our site")
+                    n3.focus();
+                    return false;
+                }
+                var i=0;
+                var valid=false;
+                while(!valid && i < n4.length)
+                {
+                    if(n4[i].checked)
+                    {
+                        valid = true ;
+                    }
+                    i++;
+                }
+                if(!valid)
+                {
+                    alert("Please choose the radio button");
+                    return false;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <form name="RegForm" method ="get" onsubmit="return validated()">
+        <p>
+            <label>
+                Name : <input name ="name" type="text" size ="25" maxlength ="30">
+            </label>
+        </p>
+        <p>
+            <label>Comments:<br>
+            <textarea name="comments" rows ="4" cols="36">Enter comments here</textarea></label>
+        </p>
+        <p>
+            <label>E-Mail address:<input name="email" type="email" size="25"></label>
+        </p>
+        <p>
+            <strong>Things you liked:</strong><br>
+            <label >Site design <input name="thingsliked" type="checkbox" value="design"></label>
+           <label>Links <input name = "thingsliked" type="checkbox" value="links"></label>
+           <label>Ease of use <input name = "thingsliked" type="checkbox" value="Ease"></label>
+           <label>Images<input name = "thingsliked" type = "checkbox" value = "Images"></label>
+        </p>
+
+         <p>
+            <strong>How did you get to our site?:</strong><br>
+            <label>Search engine
+           <input name = "howtosite" type = "radio" value = "search engine"></label>
+            <label>Links from another site
+          <input name = "howtosite" type = "radio"  value = "link"></label>
+         <label>Other
+        <input name = "howtosite" type = "radio"  value = "other"></label>
+         </p>
+
+        <p>
+           <label>Rate our site:
+           <select name = "rating">
+           <option selected>Amazing</option>
+           <option>4Star</option>
+           <option>3Star</option>
+            <option>2Star</option>
+            <option>1Star</option>
+         </select>
+          </label>
+         </p>
+<p>
+   <input type = "submit" value = "Submit">
+    <input type = "reset" value = "Clear">
+</p>
+
+</form>
+</body>
+
+ </html>
